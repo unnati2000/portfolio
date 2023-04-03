@@ -31,7 +31,7 @@ const HeroSectionComponent: React.FC = () => {
           </div>
         </div>
         {/* editor */}
-        <div className="w-1/2">
+        <div className="w-1/2 py-4">
           <CodeEditor />
         </div>
       </div>
