@@ -7,10 +7,10 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
   return (
     <div className="bg-zinc-950 min-h-screen">
-      <div className="p-4">
-        <h1 className="bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600 text-transparent bg-clip-text">
+      <div className="p-8">
+        <p className="font-semibold bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 text-transparent bg-clip-text text-lg">
           unnatibamania.me
-        </h1>
+        </p>
       </div>
       <div className="flex justify-center pt-12 items-center">
         <HeroSection />

@@ -4,9 +4,9 @@ import CodeEditor from './CodeEditor.component';
 
 const HeroSectionComponent: React.FC = () => {
   return (
-    <div className="h-3xl w-3/4 rounded-md bg-zinc-800">
+    <div className="h-3xl w-2/3 rounded-md bg-zinc-800">
       {/* navbar */}
-      <div className="flex gap-3 justify-end rounded-sm bg-zinc-700 p-3">
+      <div className="flex gap-3 justify-end rounded-sm bg-zinc-900 p-3">
         <div className="h-2 w-2 rounded-full bg-rose-700" />
         <div className="h-2 w-2 rounded-full bg-yellow-400" />
         <div className="h-2 w-2 rounded-full bg-green-500" />

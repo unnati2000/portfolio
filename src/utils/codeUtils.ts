@@ -1,6 +1,7 @@
 import { IconType } from 'react-icons';
-import { DiReact, DiPython, DiJava } from 'react-icons/di';
+import { DiReact, DiPython, DiJava, DiRust } from 'react-icons/di';
 import { SiCplusplus } from 'react-icons/si';
+import { AiFillHtml5 } from 'react-icons/ai';
 
 interface LanguageProps {
   index: number;
@@ -48,6 +49,32 @@ export const programmingLanguages: LanguageProps[] = [
         int main(){
             cout<<"Hi! I'm Unnati Bamania"<<endl;
         }
+    `,
+  },
+  {
+    index: 5,
+    Icon: DiRust,
+    name: 'Rust',
+    language: 'rust',
+    code: `
+        #include <iostream>
+        int main(){
+            cout<<"Hi! I'm Unnati Bamania"<<endl;
+        }
+    `,
+  },
+  {
+    index: 6,
+    Icon: AiFillHtml5,
+    name: 'HTML',
+    language: 'html',
+    code: `
+       <html>
+        <head></head>
+        <body>
+          <h1>Hi, I'm Unnati</h1>
+        </body>
+       </html>
     `,
   },
 ];

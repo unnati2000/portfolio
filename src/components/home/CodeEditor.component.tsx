@@ -7,6 +7,15 @@ import { IoIosArrowForward } from 'react-icons/io';
 
 import { programmingLanguages } from '@/utils/codeUtils';
 
+import Editor from 'react-simple-code-editor';
+import { highlight, languages } from 'prismjs/components/prism-core';
+import Typist from 'react-typist';
+import 'react-typist/dist/Typist.css';
+
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/themes/prism.css'; //Example style, you can use another
+
 interface LanguageProps {
   index: number;
   Icon: IconType;
@@ -19,11 +28,18 @@ const CodeEditor: React.FC = () => {
   const [selectedLanguage, setSelectedLanguage] = useState<LanguageProps>(
     programmingLanguages[0]
   );
+
+  const [typingDone, setTypingDone] = useState(false);
+
+  const handleTypingDone = () => {
+    setTypingDone(true);
+  };
+
   return (
     <div className="rounded-md pt-8 pr-8">
       {/* navbar */}
 
-      <div className="bg-zinc-950 h-8 flex justify-end rounded-t-md flex items-center">
+      <div className="bg-neutral-950 h-8 flex justify-end rounded-t-md flex items-center">
         <div className="hover:bg-zinc-900 h-full py-1 px-2 flex items-center cursor-pointer">
           <CgLoadbar size={16} color="white" />
         </div>
@@ -37,9 +53,9 @@ const CodeEditor: React.FC = () => {
 
       {/* code editor */}
       <div className="flex">
-        <div className="bg-zinc-900 py-8 px-4 flex flex-col gap-6">
+        <div className="bg-zinc-900 w-1/3 py-8 px-4 flex flex-col gap-6 rounded-bl-md">
           <div className="flex items-center gap-2">
-            <BsCode size={24} className="bg-teal-500" />
+            <BsCode size={24} className="text-teal-500" />
             <p className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 text-transparent bg-clip-text text-lg">
               Languages
             </p>
@@ -67,8 +83,37 @@ const CodeEditor: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="w-3/4 p-4 bg-zinc-950 text-zinc-800">
-          {selectedLanguage.code}
+        <div className="w-3/4 p-4  w-2/3 bg-zinc-950 text-zinc-800 rounded-br-md">
+          {typingDone ? (
+            <Editor
+              value={selectedLanguage.code}
+              padding={10}
+              style={{
+                fontFamily: '"Fira code", "Fira Mono", monospace',
+                fontSize: 12,
+              }}
+              highlight={(code) => highlight(code, languages.js)}
+            />
+          ) : (
+            <Typist
+              avgTypingDelay={30}
+              onTypingDone={handleTypingDone}
+              cursor={{
+                hideWhenDone: true,
+                hideWhenDoneDelay: 0,
+              }}
+            >
+              <Editor
+                value=""
+                padding={10}
+                style={{
+                  fontFamily: '"Fira code", "Fira Mono", monospace',
+                  fontSize: 12,
+                }}
+                highlight={(code) => highlight(code, languages.js)}
+              />
+            </Typist>
+          )}
         </div>
       </div>
     </div>
