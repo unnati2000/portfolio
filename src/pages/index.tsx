@@ -12,7 +12,7 @@ export default function Home() {
           unnatibamania.me
         </p>
       </div>
-      <div className="flex justify-center pt-12 items-center">
+      <div className="flex justify-center pt-6 items-center">
         <HeroSection />
       </div>
     </div>

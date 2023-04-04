@@ -1,0 +1,16 @@
+.label {
+  visibility: hidden;
+}
+
+.icon:hover .label {
+  visibility: visible;
+}
+
+.icon {
+  border: solid 1px red;
+}
+
+.icon:hover + .label {
+  transform: translateX(0);
+  opacity: 1;
+}
