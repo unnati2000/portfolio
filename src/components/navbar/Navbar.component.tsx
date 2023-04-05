@@ -50,7 +50,7 @@ const iconList = [
 
 const Navbar: React.FC = () => {
   return (
-    <div className="fixed bottom-10 bg-zinc-900 flex gap-6 rounded-full p-4">
+    <div className="fixed bottom-10 bg-zinc-950 flex gap-6 rounded-full p-4">
       {iconList.map((icon) => (
         <div key={icon.id} className="relative">
           <span className={' text-zinc-700 cursor-pointer hover:text-cyan-400'}>

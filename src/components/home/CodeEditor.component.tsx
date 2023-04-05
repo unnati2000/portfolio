@@ -36,7 +36,7 @@ const CodeEditor: React.FC = () => {
   };
 
   return (
-    <div className="rounded-md pt-8 pr-8">
+    <div className="rounded-md">
       {/* navbar */}
 
       <div className="bg-neutral-950 h-8 flex justify-end rounded-t-md flex items-center">
@@ -46,7 +46,7 @@ const CodeEditor: React.FC = () => {
         <div className="hover:bg-zinc-900 h-full py-1 px-2 flex items-center cursor-pointer">
           <BsWindowFullscreen size={16} color="white" />
         </div>
-        <div className="hover:bg-rose-800 rounded-r-md  h-full py-1 px-2 items-center flex items-center cursor-pointer">
+        <div className="hover:bg-rose-800 rounded-r-md  h-full py-1 px-2  flex items-center cursor-pointer">
           <RxCross1 size={16} color="white" />
         </div>
       </div>
@@ -83,7 +83,7 @@ const CodeEditor: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="w-3/4 p-4  w-2/3 bg-zinc-950 text-zinc-800 rounded-br-md">
+        <div className="p-4  w-2/3 bg-zinc-950 text-zinc-800 rounded-br-md">
           {typingDone ? (
             <Editor
               value={selectedLanguage.code}

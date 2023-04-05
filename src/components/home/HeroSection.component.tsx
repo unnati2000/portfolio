@@ -6,7 +6,7 @@ const HeroSectionComponent: React.FC = () => {
   return (
     <div className="h-3xl w-2/3 rounded-md bg-zinc-800">
       {/* navbar */}
-      <div className="flex gap-3 justify-end rounded-sm bg-zinc-900 p-3">
+      <div className="flex gap-3 justify-end rounded-sm bg-zinc-700 p-3">
         <div className="h-2 w-2 rounded-full bg-rose-700" />
         <div className="h-2 w-2 rounded-full bg-yellow-400" />
         <div className="h-2 w-2 rounded-full bg-green-500" />
@@ -21,7 +21,12 @@ const HeroSectionComponent: React.FC = () => {
               <h1 className="font-bold bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 text-transparent bg-clip-text text-4xl">
                 Unnati Bamania
               </h1>
+
+              <h1 className="font-bold bg-gradient-to-r from-sky-400 via-blue-500 to-blue-700 text-transparent bg-clip-text text-4xl">
+                Unnati Bamania
+              </h1>
             </div>
+
             <p className="text-lg text-zinc-500">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
               officia quas consequuntur ducimus eos quaerat, labore accusantium
@@ -31,7 +36,7 @@ const HeroSectionComponent: React.FC = () => {
           </div>
         </div>
         {/* editor */}
-        <div className="w-1/2 py-4">
+        <div className="w-1/2 p-8">
           <CodeEditor />
         </div>
       </div>
