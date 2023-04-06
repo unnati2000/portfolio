@@ -4,15 +4,15 @@ import CodeEditor from './CodeEditor.component';
 
 const HeroSectionComponent: React.FC = () => {
   return (
-    <div className="h-3xl w-2/3 rounded-md bg-zinc-800">
+    <div className="h-3xl w-2/3 rounded-md bg-gray-900 border-2 border-gray-800">
       {/* navbar */}
-      <div className="flex gap-3 justify-end rounded-sm bg-zinc-900 p-3">
+      <div className="flex gap-3 justify-end rounded-md bg-slate-950 p-3">
         <div className="h-2 w-2 rounded-full bg-rose-700" />
         <div className="h-2 w-2 rounded-full bg-yellow-400" />
         <div className="h-2 w-2 rounded-full bg-green-500" />
       </div>
 
-      <div className="flex">
+      <div className="flex items-center">
         {/* myself content */}
         <div className="flex w-1/2 flex-col gap-4 px-8 py-16">
           <div className="flex flex-col gap-4">
@@ -31,7 +31,7 @@ const HeroSectionComponent: React.FC = () => {
           </div>
         </div>
         {/* editor */}
-        <div className="w-1/2 py-4">
+        <div className="w-1/2 ">
           <CodeEditor />
         </div>
       </div>
