@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IconType } from 'react-icons';
 import { RxCross1 } from 'react-icons/rx';
 import { CgLoadbar } from 'react-icons/cg';
@@ -30,10 +30,19 @@ const CodeEditor: React.FC = () => {
   );
 
   const [typingDone, setTypingDone] = useState(false);
+  const [index, setIndex] = useState(0);
 
   const handleTypingDone = () => {
     setTypingDone(true);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % programmingLanguages.length);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="rounded-md py-8 pr-8">
@@ -66,9 +75,9 @@ const CodeEditor: React.FC = () => {
                   key={language.index}
                   onClick={() => setSelectedLanguage(language)}
                   className={
-                    selectedLanguage.index === language.index
-                      ? 'flex justify-between items-center p-2 w-full bg-gray-900 cursor-pointer rounded-md'
-                      : 'flex justify-between items-center p-2 w-full hover:bg-gray-900 cursor-pointer rounded-md'
+                    programmingLanguages[index].index === language.index
+                      ? 'flex transition-colors delay-100 ease-in-out justify-between items-center p-2 w-full bg-gray-900 cursor-pointer rounded-md'
+                      : 'flex transition-colors delay-100 ease-in-out justify-between items-center p-2 w-full hover:bg-gray-900 cursor-pointer rounded-md'
                   }
                 >
                   <div className="flex items-center gap-2">
@@ -83,37 +92,16 @@ const CodeEditor: React.FC = () => {
               ))}
             </div>
           </div>
-          <div className="p-4 w-2/3 bg-[#0d1117] text-zinc-800 rounded-br-md">
-            {typingDone ? (
-              <Editor
-                value={selectedLanguage.code}
-                padding={10}
-                style={{
-                  fontFamily: '"Fira code", "Fira Mono", monospace',
-                  fontSize: 12,
-                }}
-                highlight={(code) => highlight(code, languages.js)}
-              />
-            ) : (
-              <Typist
-                avgTypingDelay={30}
-                onTypingDone={handleTypingDone}
-                cursor={{
-                  hideWhenDone: true,
-                  hideWhenDoneDelay: 0,
-                }}
-              >
-                <Editor
-                  value=""
-                  padding={10}
-                  style={{
-                    fontFamily: '"Fira code", "Fira Mono", monospace',
-                    fontSize: 12,
-                  }}
-                  highlight={(code) => highlight(code, languages.js)}
-                />
-              </Typist>
-            )}
+          <div className="w-2/3 bg-[#0d1117] text-zinc-800 rounded-br-md flex items-center justify-start">
+            <Editor
+              value={programmingLanguages[index].code}
+              padding={10}
+              style={{
+                fontFamily: '"Fira code", "Fira Mono", monospace',
+                fontSize: 18,
+              }}
+              highlight={(code) => highlight(code, languages.js)}
+            />
           </div>
         </div>
       </div>
