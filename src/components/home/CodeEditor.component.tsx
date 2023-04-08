@@ -25,10 +25,6 @@ interface LanguageProps {
 }
 
 const CodeEditor: React.FC = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState<LanguageProps>(
-    programmingLanguages[0]
-  );
-
   const [typingDone, setTypingDone] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -39,7 +35,7 @@ const CodeEditor: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % programmingLanguages.length);
-    }, 1000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -62,10 +58,10 @@ const CodeEditor: React.FC = () => {
 
         {/* code editor */}
         <div className="flex">
-          <div className="bg-slate-800 w-1/3 py-8 px-4 flex flex-col gap-6 rounded-bl-md">
+          <div className="bg-slate-900 w-1/3 py-8 px-4 flex flex-col gap-6 rounded-bl-md">
             <div className="flex items-center gap-2">
-              <BsCode size={24} className="text-teal-500" />
-              <p className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 text-transparent bg-clip-text text-lg">
+              <BsCode size={24} className="text-sky-500" />
+              <p className="bg-gradient-to-r font-semibold from-sky-500 via-blue-600 to-indigo-700 text-transparent bg-clip-text text-lg">
                 Languages
               </p>
             </div>
@@ -73,16 +69,31 @@ const CodeEditor: React.FC = () => {
               {programmingLanguages.map((language) => (
                 <div
                   key={language.index}
-                  onClick={() => setSelectedLanguage(language)}
+                  onClick={() => setIndex(language.index)}
                   className={
                     programmingLanguages[index].index === language.index
-                      ? 'flex transition-colors delay-100 ease-in-out justify-between items-center p-2 w-full bg-gray-900 cursor-pointer rounded-md'
+                      ? 'flex transition-colors delay-100 ease-in-out justify-between items-center p-2 w-full bg-slate-950 cursor-pointer rounded-md'
                       : 'flex transition-colors delay-100 ease-in-out justify-between items-center p-2 w-full hover:bg-gray-900 cursor-pointer rounded-md'
                   }
                 >
                   <div className="flex items-center gap-2">
-                    <language.Icon size={24} className="text-slate-600" />
-                    <p className="text-md text-slate-600">{language.name}</p>
+                    <language.Icon
+                      size={24}
+                      className={
+                        programmingLanguages[index].index === language.index
+                          ? 'text-md text-slate-600 font-semibold '
+                          : 'text-md text-indigo-400'
+                      }
+                    />
+                    <p
+                      className={
+                        programmingLanguages[index].index === language.index
+                          ? 'text-md text-slate-600 font-semibold '
+                          : 'text-md text-indigo-400'
+                      }
+                    >
+                      {language.name}
+                    </p>
                   </div>
                   <IoIosArrowForward
                     size={12}

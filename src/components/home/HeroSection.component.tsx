@@ -4,7 +4,7 @@ import CodeEditor from './CodeEditor.component';
 
 const HeroSectionComponent: React.FC = () => {
   return (
-    <div className="h-3xl w-2/3 rounded-md bg-gray-900 border-2 border-gray-800">
+    <div className="h-3xl w-2/3 rounded-md z-100 relative bg-[#151E3F] border-2 border-indigo-950">
       {/* navbar */}
       <div className="flex gap-3 justify-end rounded-md bg-slate-950 p-3">
         <div className="h-2 w-2 rounded-full bg-rose-700" />
@@ -18,7 +18,10 @@ const HeroSectionComponent: React.FC = () => {
           <div className="flex flex-col gap-4">
             <div className="flex gap-2">
               <h1 className="text-4xl text-white">Hi! I am</h1>
-              <h1 className="font-bold bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 text-transparent bg-clip-text text-4xl">
+              {/* <h1 className="font-bold bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 text-transparent bg-clip-text text-4xl">
+                Unnati Bamania
+              </h1> */}
+              <h1 className="font-bold bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-700  text-transparent bg-clip-text text-4xl">
                 Unnati Bamania
               </h1>
             </div>
