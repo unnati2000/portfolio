@@ -13,7 +13,7 @@ interface LanguageProps {
 
 export const programmingLanguages: LanguageProps[] = [
   {
-    index: 1,
+    index: 0,
     Icon: DiReact,
     name: 'React',
     language: 'Javascript',
@@ -26,21 +26,21 @@ export const programmingLanguages: LanguageProps[] = [
     `,
   },
   {
-    index: 2,
+    index: 1,
     Icon: DiPython,
     name: 'Python',
     language: 'python',
     code: `print("Hi, I'm Unnati Bamania")`,
   },
   {
-    index: 3,
+    index: 2,
     Icon: DiJava,
     name: 'Java',
     language: 'java',
     code: `System.out.println("Hi I'm Unnati Bamania")`,
   },
   {
-    index: 4,
+    index: 3,
     Icon: SiCplusplus,
     name: 'C++',
     language: 'c++',
@@ -52,7 +52,7 @@ export const programmingLanguages: LanguageProps[] = [
     `,
   },
   {
-    index: 5,
+    index: 4,
     Icon: DiRust,
     name: 'Rust',
     language: 'rust',
@@ -64,7 +64,7 @@ export const programmingLanguages: LanguageProps[] = [
     `,
   },
   {
-    index: 6,
+    index: 5,
     Icon: AiFillHtml5,
     name: 'HTML',
     language: 'html',

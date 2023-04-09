@@ -50,24 +50,19 @@ const iconList = [
 
 const Navbar: React.FC = () => {
   return (
-    <div className="fixed bottom-10 bg-zinc-950 flex gap-6 rounded-full p-4">
+    <div className="fixed bottom-8 bg-[#151E3F] flex gap-6 rounded-full p-4">
       {iconList.map((icon) => (
         <div key={icon.id} className="relative">
-          <span className={' text-zinc-700 cursor-pointer hover:text-cyan-400'}>
+          <span
+            className={'text-indigo-500 cursor-pointer hover:text-indigo-300'}
+          >
             <icon.Icon size={28} />
           </span>
-          {/* <p
-            className={
-              'text-white transform translate-x-full opacity-0 transition-opacity duration-200'
-            }
-          >
-            {icon.label}
-          </p> */}
         </div>
       ))}
       <CiCircleMore
         size={28}
-        className="text-zinc-700 cursor-pointer hover:text-cyan-400"
+        className="text-indigo-500 cursor-pointer hover:text-indigo-300"
       />
     </div>
   );
