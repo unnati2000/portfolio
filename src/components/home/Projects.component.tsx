@@ -1,3 +1,5 @@
+import HealthyWays from './HealthyWays.component';
+
 const Projects = () => {
   return (
     <div className="flex justify-center items-center flex-col gap-8">
@@ -10,7 +12,7 @@ const Projects = () => {
       </h1>
       <div className="flex justify-around items-center gap-12">
         <div>
-          <h1 className="text-lg text-white">TEXT !</h1>
+          <HealthyWays />
         </div>
         <div>
           <h1 className="text-lg text-white">TEXT !</h1>
