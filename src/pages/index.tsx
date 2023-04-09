@@ -1,3 +1,4 @@
+import Projects from '@/components/home/Projects.component';
 import HeroSection from '../components/home/HeroSection.component';
 
 import { Inter } from 'next/font/google';
@@ -16,10 +17,13 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex justify-center items-center hero relative">
-        <div className="absolute h-72 w-48 bg-purple-700 highlight-div top-72 left-44 -z-1 blur-3xl opacity-50 rounded-full rotate-45 overflow-hidden" />
-        <div className="absolute h-72 w-48 bg-cyan-800 highlight-div top-10 right-40 -z-1 blur-3xl opacity-60 rounded-full rotate-45 overflow-hidden" />
-        <HeroSection />
+      <div className="flex flex-col gap-10">
+        <div className="flex justify-center items-center hero relative">
+          <div className="absolute h-72 w-48 bg-purple-700 highlight-div top-72 left-44 -z-1 blur-3xl opacity-50 rounded-full rotate-45 overflow-hidden" />
+          <div className="absolute h-72 w-48 bg-cyan-800 highlight-div top-10 right-40 -z-1 blur-3xl opacity-60 rounded-full rotate-45 overflow-hidden" />
+          <HeroSection />
+        </div>
+        <Projects />
       </div>
     </div>
   );
