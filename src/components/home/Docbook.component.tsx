@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { AiOutlineCheck } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
+import { FaCheckCircle } from 'react-icons/fa';
+import { IoMdCloseCircle } from 'react-icons/io';
 
 const timings = ['4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM', '6:00 PM'];
 const weekdays = [
@@ -20,11 +22,17 @@ const Docbook = () => {
     appointment: false,
   });
 
+  const [cardOneStatus, setCardOneStatus] = useState<any>(null);
+  const [cardTwoStatus, setCardTwoStatus] = useState<any>(null);
+
   const date = new Date();
 
   return (
     <div className="bg-gradient-to-r h-full w-full from-sky-500 via-blue-500 p-0.5 to-indigo-500 rounded-xl flex items-center justify-center flex-col h-452px">
-      <div className="h-full w-full bg-indigo-950 p-4 rounded-xl flex flex-col gap-4">
+      <div className="h-full w-full bg-[#151E3F] p-4 rounded-xl flex flex-col gap-4">
+        <h1 className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500  text-transparent bg-clip-text font-bold text-center text-4xl">
+          Docbook
+        </h1>
         <div className="flex flex-col gap-6">
           <p className="text-center text-indigo-400 text-2xl">
             {weekdays[date.getDay()]} {date.getDate()}/{date.getMonth()}/
@@ -79,16 +87,38 @@ const Docbook = () => {
             </div>
           </div>
 
-          <div className="flex justify-between gap-4">
-            <button className="bg-green-700 text-green-200 rounded-sm py-1 px-4 flex items-center justify-center gap-1 w-full">
+          {cardOneStatus === null ? (
+            <div className="flex justify-between gap-4">
               {' '}
-              <AiOutlineCheck size={18} /> Accept
-            </button>
-            <button className="bg-rose-700 text-rose-200 rounded-sm py-1 px-4 flex items-center justify-center gap-1 w-full">
-              <RxCross1 size={18} />
-              Reject
-            </button>
-          </div>
+              <button
+                className="bg-green-700 text-green-200 rounded-sm py-1 px-4 flex items-center justify-center gap-1 w-full"
+                onClick={() => setCardOneStatus(true)}
+              >
+                {' '}
+                <AiOutlineCheck size={18} /> Accept
+              </button>
+              <button
+                className="bg-rose-700 text-rose-200 rounded-sm py-1 px-4 flex items-center justify-center gap-1 w-full"
+                onClick={() => setCardOneStatus(false)}
+              >
+                <RxCross1 size={18} />
+                Reject
+              </button>{' '}
+            </div>
+          ) : cardOneStatus ? (
+            <div className="px-2 bg-green-400 py-1 rounded-md w-1/3">
+              <p className="text-green-800 font-semibold text-lg flex items-center gap-2">
+                <FaCheckCircle size={16} />
+                Approved
+              </p>
+            </div>
+          ) : (
+            <div className="px-2 bg-rose-400 py-1 rounded-md w-1/3">
+              <p className="text-rose-800 text-lg font-semibold gap-2 flex items-center">
+                <IoMdCloseCircle size={18} /> Rejected
+              </p>
+            </div>
+          )}
         </div>
 
         {appointmentDetails.appointment && (
@@ -120,10 +150,6 @@ const Docbook = () => {
             </div>
           </div>
         )}
-
-        <h1 className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500  text-transparent bg-clip-text font-bold text-center text-4xl">
-          Docbook
-        </h1>
       </div>
     </div>
   );

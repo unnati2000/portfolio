@@ -99,6 +99,9 @@ const HealthyWays = () => {
   return (
     <div className="bg-gradient-to-r h-full w-full from-sky-500 via-blue-500 p-0.5 to-indigo-500 rounded-xl">
       <div className="h-full w-full bg-indigo-950 rounded-xl p-4 flex flex-col items-center gap-4">
+        <h1 className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-700  text-transparent bg-clip-text font-bold text-center text-4xl">
+          HealthyWays
+        </h1>
         <div className="flex items-center gap-4">
           {foodItems.map((item) => (
             <div
@@ -167,19 +170,14 @@ const HealthyWays = () => {
           <div className="flex flex-col items-end">
             <p className="font-semibold text-indigo-400 flex items-center">
               {' '}
-              Total : <BiRupee size={18} /> {totalValue}
+              Total : <BiRupee size={18} /> {totalValue} + 18% GST ={' '}
+              <BiRupee size={18} /> {totalValue + totalValue * 0.18}
             </p>
-            <p className="font-semibold text-indigo-400">+ 18% GST</p>
-            <p className="font-semibold text-indigo-400 flex items-center">
-              = <BiRupee size={18} /> {totalValue + totalValue * 0.18}
-            </p>
-          </div>
-          <div>
-            <h1 className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-700  text-transparent bg-clip-text font-bold text-center text-4xl">
-              HealthyWays
-            </h1>
           </div>
         </div>
+        <button className="bg-indigo-400 py-1 rounded-md w-full text-indigo-900 font-semibold">
+          Pay Now
+        </button>
       </div>
     </div>
   );
