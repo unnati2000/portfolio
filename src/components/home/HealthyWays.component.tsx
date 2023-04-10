@@ -91,79 +91,81 @@ const HealthyWays = () => {
   const totalValue = items.reduce((sum, item) => sum + item.amount, 0);
 
   return (
-    <div className="bg-gradient-to-br from-slate-950 via-indigo-950 to-indigo-900  border-lg p-4 flex flex-col gap-4 rounded-xl">
-      <div className="flex items-center gap-4">
-        {foodItems.map((item) => (
-          <div
-            key={item.id}
-            className="rounded-md flex flex-col gap-1 items-center justify-center bg-slate-950 p-2"
-          >
-            <img
-              src={item.image}
-              alt={item.name}
-              height={56}
-              width={64}
-              className="rounded-md"
-            />
-            <div className="flex flex-col justify-center items-center gap-1">
-              <p className="text-indigo-400 text-md">{item.name}</p>
-              <p className="text-green-500 text-sm">Rs {item.amount}</p>
-              <button
-                className="bg-indigo-800 text-white p-1 rounded-md flex items-center gap-1"
-                onClick={() => handleAdd(item.id)}
-              >
-                <BsCartPlus size={14} /> Add to cart
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2">
-          <AiOutlineShoppingCart size={24} className="text-indigo-400" />
-          <p className="text-indigo-400 text-xl">Cart Items</p>
-        </div>
-        <div className="flex flex-col gap-2">
-          {items.map((item) => (
+    <div className="bg-gradient-to-r from-sky-500 via-blue-500 p-0.5 to-indigo-500  rounded-xl">
+      <div className="h-full w-full bg-indigo-950 rounded-xl flex flex-col gap-4 p-4">
+        <div className="flex items-center gap-1">
+          {foodItems.map((item) => (
             <div
-              className="bg-slate-900 p-2 flex justify-between rounded-md"
               key={item.id}
+              className="rounded-md flex flex-col gap-1 items-center justify-center bg-slate-950 p-2"
             >
-              <p className="text-indigo-400">{item.name}</p>
-              <div className="flex items-center gap-3">
-                <p className="text-white">
-                  {item.amount} X {item.count}
-                </p>
-                <IoMdAdd
-                  size={16}
-                  className="text-green-600 cursor-pointer"
+              <img
+                src={item.image}
+                alt={item.name}
+                height={56}
+                width={64}
+                className="rounded-md"
+              />
+              <div className="flex flex-col justify-center items-center gap-1">
+                <p className="text-indigo-400 text-md">{item.name}</p>
+                <p className="text-green-500 text-sm">Rs {item.amount}</p>
+                <button
+                  className="bg-indigo-800 text-white p-1 rounded-md flex items-center gap-1"
                   onClick={() => handleAdd(item.id)}
-                />
-                <RiSubtractFill
-                  size={16}
-                  className="text-yellow-600 cursor-pointer"
-                  onClick={() => handleDecrease(item.id)}
-                />
-                <RxCross1
-                  size={16}
-                  className="text-rose-600 cursor-pointer"
-                  onClick={() => handleRemove(item.id)}
-                />
+                >
+                  <BsCartPlus size={14} /> Add to cart
+                </button>
               </div>
             </div>
           ))}
         </div>
-        <div className="flex justify-end">
-          <p className="font-semibold text-indigo-400 flex items-center">
-            {' '}
-            Total : <BiRupee size={18} /> {totalValue}
-          </p>
-        </div>
-        <div>
-          <h1 className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-700  text-transparent bg-clip-text font-bold text-center text-4xl">
-            HealthyWays
-          </h1>
+
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <AiOutlineShoppingCart size={24} className="text-indigo-400" />
+            <p className="text-indigo-400 text-xl">Cart Items</p>
+          </div>
+          <div className="flex flex-col gap-2">
+            {items.map((item) => (
+              <div
+                className="bg-slate-900 p-2 flex justify-between rounded-md"
+                key={item.id}
+              >
+                <p className="text-indigo-400">{item.name}</p>
+                <div className="flex items-center gap-3">
+                  <p className="text-white">
+                    {item.amount} X {item.count}
+                  </p>
+                  <IoMdAdd
+                    size={16}
+                    className="text-green-600 cursor-pointer"
+                    onClick={() => handleAdd(item.id)}
+                  />
+                  <RiSubtractFill
+                    size={16}
+                    className="text-yellow-600 cursor-pointer"
+                    onClick={() => handleDecrease(item.id)}
+                  />
+                  <RxCross1
+                    size={16}
+                    className="text-rose-600 cursor-pointer"
+                    onClick={() => handleRemove(item.id)}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-end">
+            <p className="font-semibold text-indigo-400 flex items-center">
+              {' '}
+              Total : <BiRupee size={18} /> {totalValue}
+            </p>
+          </div>
+          <div>
+            <h1 className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-700  text-transparent bg-clip-text font-bold text-center text-4xl">
+              HealthyWays
+            </h1>
+          </div>
         </div>
       </div>
     </div>

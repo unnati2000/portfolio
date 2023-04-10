@@ -1,3 +1,4 @@
+import Docbook from './Docbook.component';
 import HealthyWays from './HealthyWays.component';
 
 const Projects = () => {
@@ -15,7 +16,7 @@ const Projects = () => {
           <HealthyWays />
         </div>
         <div>
-          <h1 className="text-lg text-white">TEXT !</h1>
+          <Docbook />
         </div>
         <div>
           <h1 className="text-lg text-white">TEXT !</h1>
