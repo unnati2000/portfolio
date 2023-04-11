@@ -29,8 +29,8 @@ const Docbook = () => {
 
   return (
     <div className="bg-gradient-to-r h-full w-full from-sky-500 via-blue-500 p-0.5 to-indigo-500 rounded-xl flex items-center justify-center flex-col h-452px">
-      <div className="h-full w-full bg-[#151E3F] p-4 rounded-xl flex flex-col gap-4">
-        <h1 className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500  text-transparent bg-clip-text font-bold text-center text-4xl">
+      <div className="h-full w-full bg-indigo-950 p-4 rounded-xl flex flex-col gap-4 justify-between">
+        <h1 className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600  text-transparent bg-clip-text font-bold text-center text-4xl">
           Docbook
         </h1>
         <div className="flex flex-col gap-6">
@@ -52,7 +52,7 @@ const Docbook = () => {
                 <p
                   className={
                     selectedTime === time
-                      ? 'text-indigo-900'
+                      ? 'text-indigo-900 font-semibold'
                       : 'text-indigo-400'
                   }
                 >
@@ -62,7 +62,7 @@ const Docbook = () => {
             ))}
           </div>
           <button
-            className="w-full bg-indigo-400 rounded-md py-1 text-indigo-900"
+            className="w-full bg-indigo-400 rounded-md py-1 text-indigo-900 font-semibold"
             onClick={() =>
               setAppointmentDetails({
                 appointment: true,
@@ -138,16 +138,38 @@ const Docbook = () => {
               </div>
             </div>
 
-            <div className="flex justify-between gap-4">
-              <button className="bg-green-700 text-green-200 rounded-sm py-1 px-4 flex items-center justify-center gap-1 w-full">
+            {cardTwoStatus === null ? (
+              <div className="flex justify-between gap-4">
                 {' '}
-                <AiOutlineCheck size={18} /> Accept
-              </button>
-              <button className="bg-rose-700 text-rose-200 rounded-sm py-1 px-4 flex items-center justify-center gap-1 w-full">
-                <RxCross1 size={18} />
-                Reject
-              </button>
-            </div>
+                <button
+                  className="bg-green-700 text-green-200 rounded-sm py-1 px-4 flex items-center justify-center gap-1 w-full"
+                  onClick={() => setCardTwoStatus(true)}
+                >
+                  {' '}
+                  <AiOutlineCheck size={18} /> Accept
+                </button>
+                <button
+                  className="bg-rose-700 text-rose-200 rounded-sm py-1 px-4 flex items-center justify-center gap-1 w-full"
+                  onClick={() => setCardTwoStatus(false)}
+                >
+                  <RxCross1 size={18} />
+                  Reject
+                </button>{' '}
+              </div>
+            ) : cardTwoStatus ? (
+              <div className="px-2 bg-green-400 py-1 rounded-md w-1/3">
+                <p className="text-green-800 font-semibold text-lg flex items-center gap-2">
+                  <FaCheckCircle size={16} />
+                  Approved
+                </p>
+              </div>
+            ) : (
+              <div className="px-2 bg-rose-400 py-1 rounded-md w-1/3">
+                <p className="text-rose-800 text-lg font-semibold gap-2 flex items-center">
+                  <IoMdCloseCircle size={18} /> Rejected
+                </p>
+              </div>
+            )}
           </div>
         )}
       </div>
