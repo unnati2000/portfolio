@@ -9,8 +9,8 @@ import { programmingLanguages } from '@/utils/codeUtils';
 
 import Editor from 'react-simple-code-editor';
 import { highlight, languages } from 'prismjs/components/prism-core';
-import Typist from 'react-typist';
-import 'react-typist/dist/Typist.css';
+// import Typist from 'react-typist';
+// import 'react-typist/dist/Typist.css';
 
 import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
