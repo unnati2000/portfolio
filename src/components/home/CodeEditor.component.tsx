@@ -1,32 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { IconType } from 'react-icons';
 import { RxCross1 } from 'react-icons/rx';
 import { CgLoadbar } from 'react-icons/cg';
 import { BsWindowFullscreen, BsCode } from 'react-icons/bs';
 import { IoIosArrowForward } from 'react-icons/io';
+import { Editor } from '@monaco-editor/react';
+import Typist from 'react-typist';
 
 import { programmingLanguages } from '@/utils/codeUtils';
 
-import Editor from 'react-simple-code-editor';
-import { highlight, languages } from 'prismjs/components/prism-core';
-// import Typist from 'react-typist';
-// import 'react-typist/dist/Typist.css';
-
-import 'prismjs/components/prism-clike';
-import 'prismjs/components/prism-javascript';
-import 'prismjs/themes/prism.css'; //Example style, you can use another
-
-interface LanguageProps {
-  index: number;
-  Icon: IconType;
-  name: string;
-  language: string;
-  code: string;
-}
-
 const CodeEditor: React.FC = () => {
   const [typingDone, setTypingDone] = useState(false);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState<number>(0);
 
   const handleTypingDone = () => {
     setTypingDone(true);
@@ -35,6 +19,7 @@ const CodeEditor: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % programmingLanguages.length);
+      setTypingDone(false);
     }, 3000);
 
     return () => clearInterval(interval);
@@ -81,14 +66,14 @@ const CodeEditor: React.FC = () => {
                       size={24}
                       className={
                         programmingLanguages[index].index === language.index
-                          ? 'text-md text-slate-600 font-semibold '
+                          ? 'text-md text-indigo-600 font-semibold '
                           : 'text-md text-indigo-400'
                       }
                     />
                     <p
                       className={
                         programmingLanguages[index].index === language.index
-                          ? 'text-md text-slate-600 font-semibold '
+                          ? 'text-md text-indigo-600 font-semibold '
                           : 'text-md text-indigo-400'
                       }
                     >
@@ -104,15 +89,29 @@ const CodeEditor: React.FC = () => {
             </div>
           </div>
           <div className="w-2/3 bg-[#0d1117] text-zinc-800 rounded-br-md flex items-center justify-start">
+            {/* <Typist onTypingDone={handleTypingDone}> */}
             <Editor
-              value={programmingLanguages[index].code}
-              padding={10}
-              style={{
-                fontFamily: '"Fira code", "Fira Mono", monospace',
-                fontSize: 18,
+              height="100%"
+              defaultValue={programmingLanguages[index]?.code}
+              theme="vs-dark"
+              defaultLanguage="javascript"
+              value={programmingLanguages[index]?.code}
+              width="100%"
+              language={programmingLanguages[index].language}
+              saveViewState={false}
+              options={{
+                readOnly: true,
+                wordWrap: 'on',
+                minimap: {
+                  enabled: false,
+                },
+                fontSize: 16,
+                scrollbars: {
+                  vertical: 'hidden',
+                },
               }}
-              highlight={(code) => highlight(code, languages.js)}
             />
+            {/* </Typist> */}
           </div>
         </div>
       </div>

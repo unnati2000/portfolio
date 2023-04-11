@@ -16,12 +16,12 @@ const HeroSectionComponent: React.FC = () => {
         {/* myself content */}
         <div className="flex w-1/2 flex-col gap-4 px-8 py-16">
           <div className="flex flex-col gap-4">
-            <div className="flex gap-2">
+            <div className="flex gap-2 items-center">
               <h1 className="text-4xl text-white">Hi! I am</h1>
 
-              <h1 className="font-bold bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600  text-transparent bg-clip-text text-4xl">
+              <span className="font-bold bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600  text-transparent bg-clip-text text-4xl">
                 Unnati Bamania
-              </h1>
+              </span>
             </div>
 
             <p className="text-lg text-zinc-500">
@@ -30,6 +30,10 @@ const HeroSectionComponent: React.FC = () => {
               deleniti incidunt repellendus officiis error minus esse illum
               distinctio eaque neque sequi maxime?
             </p>
+
+            <button className="bg-gradient-to-tr from-sky-400 via-blue-500 to-indigo-600 py-4 rounded-lg w-1/2 text-white font-semibold hover:bg-gradient-to-tr hover:from-indigo-600 hover:via-blue-500 hover:to-blue-400 transition hover:ease-in-out hover:duration-700">
+              About Me
+            </button>
           </div>
         </div>
         {/* editor */}

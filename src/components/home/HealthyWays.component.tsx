@@ -184,3 +184,15 @@ const HealthyWays = () => {
 };
 
 export default HealthyWays;
+
+{
+  /* <Editor
+              value={programmingLanguages[index].code}
+              padding={10}
+              style={{
+                fontFamily: '"Fira code", "Fira Mono", monospace',
+                fontSize: 18,
+              }}
+              highlight={(code) => highlight(code, languages.js)}
+            /> */
+}

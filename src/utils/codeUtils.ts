@@ -1,7 +1,8 @@
 import { IconType } from 'react-icons';
-import { DiReact, DiPython, DiJava, DiRust } from 'react-icons/di';
+import { DiReact, DiPython, DiJava, DiDart } from 'react-icons/di';
 import { SiCplusplus } from 'react-icons/si';
 import { AiFillHtml5 } from 'react-icons/ai';
+import { TbBrandGolang } from 'react-icons/tb';
 
 interface LanguageProps {
   index: number;
@@ -16,13 +17,20 @@ export const programmingLanguages: LanguageProps[] = [
     index: 0,
     Icon: DiReact,
     name: 'React',
-    language: 'Javascript',
+    language: 'javascript',
     code: `import React from 'react';
-        const App = ()=>{
-            return <div>
-                Hi, I'm Unnati Bamania
-            </div>;
-        }
+
+const App = ()=>{
+  return <div>
+   <p> Hi, I am Unnati Bamania </p>
+
+   <button>
+      About me
+   </button>
+  </div>;
+}
+
+export default App; 
     `,
   },
   {
@@ -37,44 +45,53 @@ export const programmingLanguages: LanguageProps[] = [
     Icon: DiJava,
     name: 'Java',
     language: 'java',
-    code: `System.out.println("Hi I'm Unnati Bamania")`,
+    code: `import java.util.Scanner;
+
+public class HelloWorld {
+
+    public static void main(String[] args) {
+        System.out.print("Hi! I am Unnati Bamania");
+    }
+}
+`,
   },
   {
     index: 3,
     Icon: SiCplusplus,
     name: 'C++',
-    language: 'c++',
+    language: 'cpp',
     code: `
-        #include <iostream>
-        int main(){
-            cout<<"Hi! I'm Unnati Bamania"<<endl;
-        }
+#include <iostream>
+
+int main(){
+  cout<<"Hi! I'm Unnati Bamania"<<endl;
+  return 0;
+}
     `,
   },
   {
     index: 4,
-    Icon: DiRust,
-    name: 'Rust',
-    language: 'rust',
+    Icon: TbBrandGolang,
+    name: 'Golang',
+    language: 'go',
     code: `
-        #include <iostream>
-        int main(){
-            cout<<"Hi! I'm Unnati Bamania"<<endl;
-        }
+package main
+import "fmt"
+  func main() {
+    fmt.Println("Hi! I'm Unnati Bamania")
+  }
     `,
   },
   {
     index: 5,
-    Icon: AiFillHtml5,
-    name: 'HTML',
-    language: 'html',
+    Icon: DiDart,
+    name: 'Dart',
+    language: 'dart',
     code: `
-       <html>
-        <head></head>
-        <body>
-          <h1>Hi, I'm Unnati</h1>
-        </body>
-       </html>
+void main(){
+  
+  print("Hi! I'm Unnati Bamania");
+}
     `,
   },
 ];
