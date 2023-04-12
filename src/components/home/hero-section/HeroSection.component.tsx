@@ -4,7 +4,7 @@ import CodeEditor from './CodeEditor.component';
 
 const HeroSectionComponent: React.FC = () => {
   return (
-    <div className="h-3xl w-2/3 rounded-md z-100 relative bg-[#151E3F] border-2 border-indigo-950">
+    <div className="w-2/3 rounded-md z-100 relative bg-[#151E3F] border-2 border-indigo-950">
       {/* navbar */}
       <div className="flex gap-3 justify-end rounded-md bg-slate-950 p-3">
         <div className="h-2 w-2 rounded-full bg-rose-700" />

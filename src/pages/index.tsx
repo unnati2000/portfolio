@@ -1,7 +1,8 @@
-import Projects from '@/components/home/Projects.component';
-import HeroSection from '../components/home/HeroSection.component';
+import Projects from '@/components/home/projects/Projects.component';
+import HeroSection from '../components/home/hero-section/HeroSection.component';
 
 import { Inter } from 'next/font/google';
+import CreativeSection from '@/components/home/creative/CreativeSection.component';
 
 export default function Home() {
   // bg-[#030027]
@@ -24,6 +25,7 @@ export default function Home() {
           <HeroSection />
         </div>
         <Projects />
+        <CreativeSection />
       </div>
     </div>
   );
