@@ -1,4 +1,5 @@
 import { AiOutlineTwitter } from 'react-icons/ai';
+
 import Book from './Book.component';
 import Twitter from './Twitter.component';
 import DevTo from './DevTo.component';
@@ -7,10 +8,11 @@ import Tessact from './Tessact.component';
 import Gallery from './Gallery.component';
 import Swimming from './Swimming.component';
 import DevToStats from './DevToStats.component';
+import Song from './Song.component';
 
 const CreativeSection = () => {
   return (
-    <div className="grid grid-rows-12 grid-cols-12 gap-2">
+    <div className="grid grid-rows-12 grid-cols-12 gap-4">
       <div className="row-start-1 row-span-3 col-start-2 col-span-6 py-4 px-4 ">
         <div className="flex flex-col gap-4">
           <p className="text-2xl text-indigo-400 font-semibold">Unnati demo</p>
@@ -32,12 +34,16 @@ const CreativeSection = () => {
         <DevTo />
       </div>
 
-      <div className="row-start-5 row-span-1 col-start-4 col-span-2 text-white">
+      <div className="row-start-5 row-span-1 col-start-4 col-span-2 text-white h-min">
         <Gallery />
       </div>
 
-      <div className="row-start-6 row-span-1 col-start-4 col-span-2 text-white">
+      <div className="row-start-4 row-span-1 col-start-4 col-span-2 text-white">
         <Swimming />
+      </div>
+
+      <div className="row-start-5 mt-44 row-span-1 col-start-6 col-span-2 text-white  w-full">
+        <Song />
       </div>
       <div className="row-start-4 row-span-1 col-start-6 col-span-2">
         <Book />
