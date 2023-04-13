@@ -1,5 +1,6 @@
-import { GiMountains } from 'react-icons/gi';
-import { BsPersonWorkspace } from 'react-icons/bs';
+import { FaMountain } from 'react-icons/fa';
+import { CgCoffee } from 'react-icons/cg';
+import { HiPaintBrush } from 'react-icons/hi2';
 
 const Gallery = () => {
   return (
@@ -9,8 +10,9 @@ const Gallery = () => {
       </div>
       <div className="z-10 flex justify-center">
         <div className="absolute bottom-2 flex gap-4 items-center bg-white p-2 rounded-full">
-          <GiMountains size={18} className="text-slate-800" />
-          <BsPersonWorkspace size={18} className="text-slate-800" />
+          <FaMountain size={18} className="text-slate-800" />
+          <CgCoffee size={18} className="text-slate-800" />
+          <HiPaintBrush size={18} className="text-slate-800" />
         </div>
       </div>
     </div>
