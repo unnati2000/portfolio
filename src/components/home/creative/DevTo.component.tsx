@@ -1,6 +1,6 @@
 const DevTo = () => {
   return (
-    <div className="border-2 border-indigo-400 rounded-lg flex flex-col gap-4 p-4">
+    <div className="backdrop-blur-4xl backdrop-saturate-100 bg-gradient-to-br from-[#030027] to-slate-300/20 border-indigo-950 border-2 rounded-lg flex flex-col gap-4 p-4">
       <h1 className="text-2xl font-semibold text-indigo-400">
         Best of VS Code extensions{' '}
       </h1>

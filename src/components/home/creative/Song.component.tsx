@@ -9,7 +9,7 @@ import { GiPauseButton } from 'react-icons/gi';
 
 const Song = () => {
   return (
-    <div className="h-full w-full rounded-lg border-2 border-indigo-400 flex flex-col gap-2 p-2">
+    <div className="h-full w-full rounded-lg backdrop-blur-4xl backdrop-saturate-100 bg-gradient-to-br from-[#030027] to-slate-300/20 border-indigo-950 border-2 flex flex-col gap-2 p-2">
       <div className="flex justify-between items-start">
         <div className="border-2 border-indigo-400 rounded-md">
           <img

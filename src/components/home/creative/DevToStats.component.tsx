@@ -5,7 +5,7 @@ import { FaDev } from 'react-icons/fa';
 
 const DevToStats = () => {
   return (
-    <div className="border-2 border-indigo-400 rounded-lg p-4 flex gap-4 flex-col">
+    <div className="backdrop-blur-4xl backdrop-saturate-100 bg-gradient-to-br from-[#030027] to-slate-300/20 border-indigo-950 border-2 rounded-lg p-4 flex gap-4 flex-col">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
           <div>

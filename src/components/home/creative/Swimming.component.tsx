@@ -2,7 +2,7 @@ import { TbSwimming } from 'react-icons/tb';
 
 const Swimming = () => {
   return (
-    <div className="border-2 border-indigo-400 rounded-lg flex justify-between items-center h-full">
+    <div className="backdrop-blur-4xl backdrop-saturate-100 bg-gradient-to-br from-[#030027] to-slate-300/20 border-indigo-950 border-2 rounded-lg flex justify-between items-center h-full">
       <div>
         <p className="text-white p-2">If I am not coding I might by swimming</p>
       </div>

@@ -1,6 +1,6 @@
 const Medium = () => {
   return (
-    <div className="grid grid-cols-3 border-indigo-400 border-2 rounded-lg">
+    <div className="grid grid-cols-3 backdrop-blur-4xl backdrop-saturate-100 bg-gradient-to-br from-[#030027] to-slate-300/20 border-indigo-950 border-2 rounded-lg">
       <div className="col-start-1 col-span-1">
         <img
           src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*Z_sVVwgToNMUEwzu8KaGhA.png"
