@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { RiSubtractFill } from 'react-icons/ri';
-import { IoMdAdd, IoMdAddCircleOutline } from 'react-icons/io';
+import { IoMdAdd } from 'react-icons/io';
 import { RxCross1 } from 'react-icons/rx';
 import { BiRupee } from 'react-icons/bi';
+import { motion } from 'framer-motion';
 
 const foodItems = [
   {
@@ -97,7 +98,18 @@ const HealthyWays = () => {
   const totalValue = items.reduce((sum, item) => sum + item.amount, 0);
 
   return (
-    <div className="bg-gradient-to-r h-full w-full from-sky-500 via-blue-500 p-0.5 to-indigo-500 rounded-xl">
+    <motion.div
+      initial={{
+        x: '-100px',
+        opacity: 0.3,
+      }}
+      whileInView={{
+        x: '0',
+        opacity: 1,
+        transition: { duration: 1, ease: 'easeInOut' },
+      }}
+      className="bg-gradient-to-r h-full w-full from-sky-500 via-blue-500 p-0.5 to-indigo-500 rounded-xl"
+    >
       <div className="h-full w-full bg-indigo-950 rounded-xl p-4 flex flex-col items-center gap-4 justify-between">
         <h1 className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-700  text-transparent bg-clip-text font-bold text-center text-4xl">
           HealthyWays
@@ -179,7 +191,7 @@ const HealthyWays = () => {
           Pay Now
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

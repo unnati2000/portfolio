@@ -3,6 +3,7 @@ import { AiOutlineCheck } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import { FaCheckCircle } from 'react-icons/fa';
 import { IoMdCloseCircle } from 'react-icons/io';
+import { motion } from 'framer-motion';
 
 const timings = ['4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM', '6:00 PM'];
 const weekdays = [
@@ -28,7 +29,18 @@ const Docbook = () => {
   const date = new Date();
 
   return (
-    <div className="bg-gradient-to-r h-full w-full from-sky-500 via-blue-500 p-0.5 to-indigo-500 rounded-xl flex items-center justify-center flex-col h-452px">
+    <motion.div
+      initial={{
+        x: '100px',
+        opacity: 0.3,
+      }}
+      whileInView={{
+        x: '0',
+        opacity: 1,
+        transition: { duration: 1, ease: 'easeInOut' },
+      }}
+      className="bg-gradient-to-r h-full w-full from-sky-500 via-blue-500 p-0.5 to-indigo-500 rounded-xl flex items-center justify-center flex-col h-452px"
+    >
       <div className="h-full w-full bg-indigo-950 p-4 rounded-xl flex flex-col gap-4 justify-between">
         <h1 className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600  text-transparent bg-clip-text font-bold text-center text-4xl">
           Docbook
@@ -173,7 +185,7 @@ const Docbook = () => {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

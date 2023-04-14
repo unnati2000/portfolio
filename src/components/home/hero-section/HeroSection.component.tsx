@@ -1,10 +1,23 @@
 import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 import CodeEditor from './CodeEditor.component';
 
 const HeroSectionComponent: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const rotation = useTransform(scrollYProgress, [0, 0.4], ['0deg', '-90deg']);
+
   return (
-    <div className="w-2/3 rounded-md z-100 relative bg-[#151E3F] border-2 border-indigo-950">
+    <motion.div
+      initial={{
+        rotateX: 0,
+      }}
+      style={{
+        transformOrigin: 'top center',
+        rotateX: rotation,
+      }}
+      className="w-2/3 rounded-md z-100 relative bg-[#151E3F] border-2 border-indigo-950"
+    >
       {/* navbar */}
       <div className="flex gap-3 justify-end rounded-md bg-slate-950 p-3">
         <div className="h-2 w-2 rounded-full bg-rose-700" />
@@ -41,7 +54,7 @@ const HeroSectionComponent: React.FC = () => {
           <CodeEditor />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
