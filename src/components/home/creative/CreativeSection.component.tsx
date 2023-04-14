@@ -1,4 +1,5 @@
 import { AiOutlineTwitter } from 'react-icons/ai';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 import Book from './Book.component';
 import Twitter from './Twitter.component';
@@ -11,6 +12,11 @@ import DevToStats from './DevToStats.component';
 import Song from './Song.component';
 
 const CreativeSection = () => {
+  const { scrollYProgress } = useScroll();
+
+  const upwards = useTransform(scrollYProgress, [0.8, 1], [-24, 10]);
+  const downwards = useTransform(scrollYProgress, [0.8, 1], [0, 24]);
+
   return (
     <div className="grid grid-rows-12 grid-cols-12 gap-4">
       <div className="row-start-1 row-span-3 col-start-2 col-span-6 py-4 px-4 ">
@@ -22,39 +28,113 @@ const CreativeSection = () => {
         </div>
       </div>
 
-      <div className="row-start-1 row-span-4 col-start-10 col-span-2 text-white">
+      <motion.div
+        initial={{
+          y: 0,
+        }}
+        style={{
+          y: upwards,
+        }}
+        className="row-start-1 row-span-4 col-start-10 col-span-2 text-white"
+      >
         <Twitter />
-      </div>
+      </motion.div>
 
-      <div className="row-start-2 row-span-4 col-start-8 col-span-2">
+      <motion.div
+        initial={{
+          y: 0,
+        }}
+        style={{
+          y: downwards,
+        }}
+        className="row-start-2 row-span-4 col-start-8 col-span-2"
+      >
         <Tessact />
-      </div>
+      </motion.div>
 
-      <div className="row-start-5 row-span-6 col-start-2 col-span-2 text-white">
+      <motion.div
+        initial={{
+          y: 0,
+        }}
+        style={{
+          y: downwards,
+        }}
+        className="row-start-5 row-span-6 col-start-2 col-span-2 text-white"
+      >
         <DevTo />
-      </div>
+      </motion.div>
 
-      <div className="row-start-5 row-span-1 col-start-4 col-span-2 text-white h-min">
+      <motion.div
+        initial={{
+          y: 0,
+        }}
+        style={{
+          y: upwards,
+        }}
+        className="row-start-5 row-span-1 col-start-4 col-span-2 text-white h-min"
+      >
         <Gallery />
-      </div>
+      </motion.div>
 
-      <div className="row-start-4 row-span-1 col-start-4 col-span-2 text-white">
+      <motion.div
+        initial={{
+          y: 0,
+        }}
+        style={{
+          y: upwards,
+        }}
+        className="row-start-4 row-span-1 col-start-4 col-span-2 text-white"
+      >
         <Swimming />
-      </div>
+      </motion.div>
 
-      <div className="row-start-5 mt-44 row-span-1 col-start-6 col-span-2 text-white  w-full">
+      <motion.div
+        initial={{
+          y: 0,
+        }}
+        style={{
+          y: downwards,
+        }}
+        className="row-start-5 mt-44 row-span-1 col-start-6 col-span-2 text-white  w-full"
+      >
         <Song />
-      </div>
-      <div className="row-start-4 row-span-1 col-start-6 col-span-2">
-        <Book />
-      </div>
+      </motion.div>
 
-      <div className="row-start-5 row-span-4 col-start-6 col-span-2  text-white">
+      <motion.div
+        initial={{
+          y: 0,
+        }}
+        style={{
+          y: downwards,
+        }}
+        className="row-start-4 row-span-1 col-start-6 col-span-2"
+      >
+        <Book />
+      </motion.div>
+
+      <motion.div
+        initial={{
+          y: 0,
+        }}
+        style={{
+          y: downwards,
+        }}
+        className="row-start-5 row-span-4 col-start-6 col-span-2  text-white"
+      >
         <DevToStats />
-      </div>
-      <div className="row-start-5 row-span-1 col-start-8 col-span-4 text-white">
+      </motion.div>
+
+      <motion.div
+        initial={{
+          y: 0,
+        }}
+        style={{
+          y: upwards,
+        }}
+        className="row-start-5 row-span-1 col-start-8 col-span-4 text-white"
+      >
         <Medium />
-      </div>
+      </motion.div>
     </div>
   );
 };
