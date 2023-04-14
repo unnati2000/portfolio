@@ -7,7 +7,7 @@ import CreativeSection from '@/components/home/creative/CreativeSection.componen
 export default function Home() {
   return (
     <div className="bg-[#030027] min-h-screen h-full">
-      <div className="flex flex-col gap-36">
+      <div className="flex flex-col gap-48">
         <div
           style={{
             perspective: '2000px',
