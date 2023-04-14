@@ -16,7 +16,12 @@ const Projects = () => {
         <div className="absolute left-48 rotate-45 top-20 h-72 w-72 bg-sky-600 opacity-50 blur-3xl rounded-full overflow-hidden" />
         <div className="absolute right-48 rotate-45 bottom-4 h-96 w-72 bg-purple-600 opacity-50 blur-3xl rounded-full overflow-hidden" />
 
-        <div className="relative">
+        <div
+          className="relative"
+          style={{
+            perspective: '1000px',
+          }}
+        >
           <HealthyWays />
         </div>
         <div className="relative">

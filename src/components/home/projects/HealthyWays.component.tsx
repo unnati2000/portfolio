@@ -76,7 +76,6 @@ const HealthyWays = () => {
   };
 
   const handleDecrease = (index: number) => {
-    let foodItem = foodItems.find((item) => item.id === index);
     const existingItem = items.find((item) => item.id === index);
 
     if (existingItem?.count == 1) {
@@ -100,13 +99,19 @@ const HealthyWays = () => {
   return (
     <motion.div
       initial={{
-        x: '-100px',
+        x: '-300px',
         opacity: 0.3,
+        rotateY: 60,
       }}
       whileInView={{
-        x: '0',
+        x: '10px',
         opacity: 1,
-        transition: { duration: 1, ease: 'easeInOut' },
+        rotateY: 0,
+        transition: { duration: 1.5, ease: 'easeInOut' },
+      }}
+      style={{
+        transformOrigin: 'top center',
+        rotateY: 0,
       }}
       className="bg-gradient-to-r h-full w-full from-sky-500 via-blue-500 p-0.5 to-indigo-500 rounded-xl"
     >
