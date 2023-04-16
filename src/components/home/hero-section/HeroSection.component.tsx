@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 import CodeEditor from './CodeEditor.component';
@@ -44,9 +45,16 @@ const HeroSectionComponent: React.FC = () => {
               distinctio eaque neque sequi maxime?
             </p>
 
-            <button className="bg-gradient-to-tr from-sky-400 via-blue-500 to-indigo-600 py-4 rounded-lg w-1/2 text-white font-semibold hover:bg-gradient-to-tr hover:from-indigo-600 hover:via-blue-500 hover:to-blue-400 transition hover:ease-in-out hover:duration-700">
-              About Me
-            </button>
+            <Link href={'/about'}>
+              <motion.div
+                initial={{
+                  border: '0',
+                }}
+                className="py-4 px-12 w-fit bg-gradient-to-tr from-indigo-400 to-indigo-600 text-white rounded-full hover:shadow-glow hover:transition-shadow hover:duration-300 hover:ease-in-out hover:text-white hover:ring-4 ring-indigo-600 hover:bg-gradient-to-b hover:from-indigo-900 hover:via-indigo-700 hover:to-indigo-500 hover:border-2"
+              >
+                About Me
+              </motion.div>
+            </Link>
           </div>
         </div>
         {/* editor */}

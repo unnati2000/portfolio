@@ -5,6 +5,7 @@ import { IoMdAdd } from 'react-icons/io';
 import { RxCross1 } from 'react-icons/rx';
 import { BiRupee } from 'react-icons/bi';
 import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
 
 const foodItems = [
   {
@@ -162,7 +163,7 @@ const HealthyWays = () => {
               >
                 <p className="text-indigo-400">{item.name}</p>
                 <div className="flex items-center gap-3">
-                  <p className="text-white flex items-center">
+                  <p className="text-white flex items-center gap-2">
                     <BiRupee size={18} /> {item.amount} X {item.count}
                   </p>
                   <IoMdAdd

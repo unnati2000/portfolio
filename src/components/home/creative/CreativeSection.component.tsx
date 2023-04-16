@@ -18,8 +18,8 @@ const CreativeSection = () => {
   const downwards = useTransform(scrollYProgress, [0.8, 1], [0, 24]);
 
   return (
-    <div className="grid grid-rows-12 grid-cols-12 gap-4">
-      <div className="row-start-1 row-span-3 col-start-2 col-span-6 py-4 px-4 ">
+    <div className="grid grid-rows-6 grid-cols-10 gap-4 border-2">
+      <div className="row-start-1 row-span-1 col-start-2 col-span-6 py-4 px-4 ">
         <div className="flex flex-col gap-4">
           <p className="text-2xl text-indigo-400 font-semibold">Unnati demo</p>
           <h1 className="text-6xl text-white font-semibold">
@@ -27,114 +27,50 @@ const CreativeSection = () => {
           </h1>
         </div>
       </div>
-
-      <motion.div
-        initial={{
-          y: 0,
-        }}
-        style={{
-          y: upwards,
-        }}
-        className="row-start-1 row-span-4 col-start-10 col-span-2 text-white"
-      >
+      {/* row 1->2 col-> 9-10 */}
+      <div className="row-start-1 row-span-1 col-start-9 col-span-2 border-2 text-white">
         <Twitter />
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{
-          y: 0,
-        }}
-        style={{
-          y: downwards,
-        }}
-        className="row-start-2 row-span-4 col-start-8 col-span-2"
-      >
-        <Tessact />
-      </motion.div>
-
-      <motion.div
-        initial={{
-          y: 0,
-        }}
-        style={{
-          y: downwards,
-        }}
-        className="row-start-5 row-span-6 col-start-2 col-span-2 text-white"
-      >
+      {/* rows 2->5 column 1->3 */}
+      <div className="row-start-2 row-span-2 col-start-1 col-span-2 border-2 text-white">
         <DevTo />
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{
-          y: 0,
-        }}
-        style={{
-          y: upwards,
-        }}
-        className="row-start-5 row-span-1 col-start-4 col-span-2 text-white h-min"
-      >
-        <Gallery />
-      </motion.div>
-
-      <motion.div
-        initial={{
-          y: 0,
-        }}
-        style={{
-          y: upwards,
-        }}
-        className="row-start-4 row-span-1 col-start-4 col-span-2 text-white"
-      >
-        <Swimming />
-      </motion.div>
-
-      <motion.div
-        initial={{
-          y: 0,
-        }}
-        style={{
-          y: downwards,
-        }}
-        className="row-start-5 mt-44 row-span-1 col-start-6 col-span-2 text-white  w-full"
-      >
-        <Song />
-      </motion.div>
-
-      <motion.div
-        initial={{
-          y: 0,
-        }}
-        style={{
-          y: downwards,
-        }}
-        className="row-start-4 row-span-1 col-start-6 col-span-2"
-      >
+      {/* rows 2->3 column 3->5 */}
+      <div className="row-start-2 row-span-1 col-start-3 col-span-2 border-2 text-white">
         <Book />
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{
-          y: 0,
-        }}
-        style={{
-          y: downwards,
-        }}
-        className="row-start-5 row-span-4 col-start-6 col-span-2  text-white"
-      >
-        <DevToStats />
-      </motion.div>
+      {/* rows 2->3 col 5->8 */}
+      <div className="row-start-2 row-span-1 col-start-5 col-span-3 border-2 text-white">
+        <Tessact />
+      </div>
 
-      <motion.div
-        initial={{
-          y: 0,
-        }}
-        style={{
-          y: upwards,
-        }}
-        className="row-start-5 row-span-1 col-start-8 col-span-4 text-white"
-      >
+      {/* row 2->3 column 5->3  */}
+      <div className="row-start-2 row-span-1 col-start-5 col-span-3 border-2 text-white">
+        <Tessact />
+      </div>
+
+      {/* 2->4 col 8->3 */}
+      <div className="row-start-2 row-span-2 col-start-8 col-span-3 border-2 text-white">
+        <Gallery />
+      </div>
+
+      {/* row 3->6 column 3->6 */}
+      <div className="row-start-3 row-span-3 col-start-3 col-span-3 border-2 text-white">
         <Medium />
-      </motion.div>
+      </div>
+
+      {/* row 4->5 col 8->10 */}
+      <div className="row-start-4 row-span-1 col-start-8 col-span-3 border-2 text-white">
+        Swimming
+      </div>
+
+      {/* row 3->5 col 6->7 */}
+      <div className="row-start-3 row-span-2 col-start-6 col-span-2 border-2 text-white">
+        <Song />
+      </div>
     </div>
   );
 };

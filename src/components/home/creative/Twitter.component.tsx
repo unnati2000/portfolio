@@ -2,10 +2,7 @@ import { AiOutlineTwitter } from 'react-icons/ai';
 
 const Twitter = () => {
   return (
-    <div
-      style={{}}
-      className="rounded-lg flex flex-col gap-4  h-full p-3 backdrop-blur-4xl backdrop-saturate-100 bg-gradient-to-br from-[#030027] to-slate-300/20 border-indigo-950 border-2"
-    >
+    <div className="rounded-lg flex flex-col gap-4  h-full p-3 backdrop-blur-4xl backdrop-saturate-100 bg-gradient-to-br from-[#030027] to-slate-300/20 border-indigo-950 border-2">
       <div className="flex justify-between ">
         <div className="flex gap-2 items-center">
           <img

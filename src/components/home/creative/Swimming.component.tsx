@@ -4,18 +4,15 @@ import { TbSwimming } from 'react-icons/tb';
 
 const Swimming = () => {
   const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="backdrop-blur-4xl backdrop-saturate-100 bg-gradient-to-br from-[#030027] to-slate-300/20 border-indigo-950 border-2 rounded-lg flex justify-between h-fit relative">
+    <div className="backdrop-blur-4xl h-full backdrop-saturate-100 bg-gradient-to-br from-[#030027] to-slate-300/20 border-indigo-950 border-2 rounded-lg flex justify-between  relative">
       <motion.div
         initial={{
           width: 'min-content',
         }}
-        animate={{
+        whileHover={{
           width: '200px',
-          height: 'min-content',
-          transition: {
-            duration: 3,
-          },
         }}
         transition={{
           duration: 3,
