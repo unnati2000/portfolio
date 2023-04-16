@@ -1,0 +1,78 @@
+.swimming {
+  --c1: #2e88c7;
+  --c2: #9ccce8;
+
+  --_p: 93% 83.5% at;
+  --_g1: radial-gradient(var(--_p) bottom, var(--c1) 79.5%, #0000 80%) no-repeat;
+  --_g2: radial-gradient(var(--_p) top, #0000 79.5%, var(--c1) 80%) no-repeat;
+  --_g3: radial-gradient(var(--_p) bottom, var(--c2) 79.5%, #0000 80%) no-repeat;
+  --_g4: radial-gradient(var(--_p) top, #0000 79.5%, var(--c2) 80%) no-repeat;
+  background: var(--_g1), var(--_g2), var(--_g1), var(--_g2), var(--_g3),
+    var(--_g4), var(--_g3), var(--_g4);
+  /* -webkit-background-clip: text; */
+  /* background-clip: text; */
+
+  display: flex;
+  justify-content: center;
+  color: #0000;
+  height: 100%;
+  -webkit-text-stroke: 1px var(--c1);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  animation: s 2s infinite alternate, m 3s infinite linear;
+  font-size: 40px;
+}
+
+.swimmingText {
+  --c1: #2e88c7;
+  --c2: #9ccce8;
+
+  --_p: 93% 83.5% at;
+  --_g1: radial-gradient(var(--_p) bottom, var(--c1) 79.5%, #0000 80%) no-repeat;
+  --_g2: radial-gradient(var(--_p) top, #0000 79.5%, var(--c1) 80%) no-repeat;
+  --_g3: radial-gradient(var(--_p) bottom, var(--c2) 79.5%, #0000 80%) no-repeat;
+  --_g4: radial-gradient(var(--_p) top, #0000 79.5%, var(--c2) 80%) no-repeat;
+  background: var(--_g1), var(--_g2), var(--_g1), var(--_g2), var(--_g3),
+    var(--_g4), var(--_g3), var(--_g4);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  display: flex;
+  justify-content: center;
+  color: #0000;
+  height: 100%;
+  -webkit-text-stroke: 1px var(--c1);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  animation: s 2s infinite alternate, m 3s infinite linear;
+  font-size: 40px;
+}
+
+@keyframes m {
+  0% {
+    background-position: -200% 100%, -100% 100%, 0% 100%, 100% 100%, 0% 100%,
+      100% 100%, 200% 100%, 300% 100%;
+  }
+  100% {
+    background-position: 0% 100%, 100% 100%, 200% 100%, 300% 100%, -200% 100%,
+      -100% 100%, 0% 100%, 100% 100%;
+  }
+}
+@keyframes s {
+  0% {
+    background-size: 50.5% 60%, 50.5% 60%, 50.5% 60%, 50.5% 60%, 50.5% 90%,
+      50.5% 90%, 50.5% 90%, 50.5% 90%;
+  }
+  33% {
+    background-size: 50.5% 70%, 50.5% 70%, 50.5% 70%, 50.5% 70%, 50.5% 75%,
+      50.5% 75%, 50.5% 75%, 50.5% 75%;
+  }
+  66% {
+    background-size: 50.5% 55%, 50.5% 55%, 50.5% 55%, 50.5% 55%, 50.5% 80%,
+      50.5% 80%, 50.5% 80%, 50.5% 80%;
+  }
+  100% {
+    background-size: 50.5% 90%, 50.5% 90%, 50.5% 90%, 50.5% 90%, 50.5% 95%,
+      50.5% 95%, 50.5% 95%, 50.5% 95%;
+  }
+}

@@ -58,17 +58,17 @@ const CreativeSection = () => {
       </div>
 
       {/* row 3->6 column 3->6 */}
-      <div className="row-start-3 row-span-3 col-start-3 col-span-3 border-2 text-white">
+      <div className="row-start-3 row-span-3 col-start-3 col-span-3  text-white">
         <Medium />
       </div>
 
       {/* row 4->5 col 8->10 */}
-      <div className="row-start-4 row-span-1 col-start-8 col-span-3 border-2 text-white">
-        Swimming
+      <div className="row-start-4 row-span-1 col-start-8 col-span-3  text-white">
+        <Swimming />
       </div>
 
       {/* row 3->5 col 6->7 */}
-      <div className="row-start-3 row-span-2 col-start-6 col-span-2 border-2 text-white">
+      <div className="row-start-3 row-span-2 col-start-6 col-span-2 text-white">
         <Song />
       </div>
     </div>

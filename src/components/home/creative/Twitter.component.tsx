@@ -54,7 +54,7 @@ const Twitter = () => {
             </p>
           </div>
         </div>
-        <motion.div
+        <div
           onMouseOver={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           className={
@@ -67,7 +67,7 @@ const Twitter = () => {
             size={20}
             className={hovered ? 'text-white' : 'text-indigo-400'}
           />
-        </motion.div>
+        </div>
       </div>
 
       <p className="text-sm text-white z-20">
