@@ -18,7 +18,7 @@ const CreativeSection = () => {
   const downwards = useTransform(scrollYProgress, [0.8, 1], [0, 24]);
 
   return (
-    <div className="grid grid-rows-6 grid-cols-10 gap-4 border-2">
+    <div className="grid grid-rows-6 grid-cols-10 gap-4 border-2 px-16">
       <div className="row-start-1 row-span-1 col-start-2 col-span-6 py-4 px-4 ">
         <div className="flex flex-col gap-4">
           <p className="text-2xl text-indigo-400 font-semibold">Unnati demo</p>
@@ -28,7 +28,7 @@ const CreativeSection = () => {
         </div>
       </div>
       {/* row 1->2 col-> 9-10 */}
-      <div className="row-start-1 row-span-1 col-start-9 col-span-2 border-2 text-white">
+      <div className="row-start-1 row-span-1 col-start-9 col-span-2 text-white">
         <Twitter />
       </div>
 
