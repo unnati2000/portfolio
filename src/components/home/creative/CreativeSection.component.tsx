@@ -53,7 +53,7 @@ const CreativeSection = () => {
       </div>
 
       {/* 2->4 col 8->3 */}
-      <div className="row-start-2 row-span-2 col-start-8 col-span-3 border-2 text-white">
+      <div className="row-start-2 row-span-2 col-start-8 col-span-3 text-white">
         <Gallery />
       </div>
 

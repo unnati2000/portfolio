@@ -7,7 +7,7 @@ const Twitter = () => {
   const [hovered, setIsHovered] = useState(false);
 
   return (
-    <div className="rounded-lg flex flex-col gap-6  h-full p-3 backdrop-blur-4xl backdrop-saturate-100 bg-gradient-to-br from-[#030027] to-slate-300/20 border-indigo-950 border-2 relative">
+    <div className="rounded-2xl flex flex-col gap-6  h-full p-3 backdrop-blur-4xl backdrop-saturate-100 bg-gradient-to-br from-[#030027] to-slate-300/20 border-indigo-950 border-2 relative">
       {hovered && (
         <motion.div
           initial={{
