@@ -15,12 +15,7 @@ const Swimming = () => {
     >
       <div>
         <p className={'text-white font-semibold text-2xl text-center p-4'}>
-          If I am not coding I might be{' '}
-          {isHovered ? (
-            <span className={styles.swimmingText}> swimming</span>
-          ) : (
-            <span>swimming</span>
-          )}
+          If I am not coding I might be swimming
         </p>
       </div>
 

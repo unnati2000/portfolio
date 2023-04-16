@@ -45,7 +45,7 @@ const HeroSectionComponent: React.FC = () => {
               distinctio eaque neque sequi maxime?
             </p>
 
-            <Link href={'/about'}>
+            <Link href={'/about'} className="w-fit">
               <motion.div
                 initial={{
                   border: '0',

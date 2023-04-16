@@ -124,18 +124,40 @@ const Docbook = () => {
               </button>{' '}
             </div>
           ) : cardOneStatus ? (
-            <div className="px-2 bg-green-400 py-1 rounded-md w-1/3">
+            <motion.div
+              initial={{
+                x: 100,
+              }}
+              animate={{
+                x: 0,
+              }}
+              transition={{
+                duration: 0.4,
+              }}
+              className="px-2 bg-green-400 py-1 rounded-md w-1/3"
+            >
               <p className="text-green-800 font-semibold text-lg flex items-center gap-2">
                 <FaCheckCircle size={16} />
                 Approved
               </p>
-            </div>
+            </motion.div>
           ) : (
-            <div className="px-2 bg-rose-400 py-1 rounded-md w-1/3">
+            <motion.div
+              initial={{
+                x: 100,
+              }}
+              animate={{
+                x: 0,
+              }}
+              transition={{
+                duration: 0.4,
+              }}
+              className="px-2 bg-rose-400 py-1 rounded-md w-1/3"
+            >
               <p className="text-rose-800 text-lg font-semibold gap-2 flex items-center">
                 <IoMdCloseCircle size={18} /> Rejected
               </p>
-            </div>
+            </motion.div>
           )}
         </div>
 
