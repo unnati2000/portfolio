@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { RiSubtractFill } from 'react-icons/ri';
 import { IoMdAdd } from 'react-icons/io';
@@ -47,6 +47,8 @@ interface foodInterFace {
 }
 
 const HealthyWays = () => {
+  const [audio, setAudio] = useState<HTMLAudioElement>();
+
   const [items, setItems] = useState<foodInterFace[]>([
     {
       id: 1,
@@ -58,7 +60,17 @@ const HealthyWays = () => {
     },
   ]);
 
+  useEffect(() => {
+    setAudio(new Audio('./click.wav'));
+  }, []);
+
   const handleAdd = (index: number) => {
+    audio?.play();
+
+    console.log({
+      audio,
+    });
+
     let foodItem = foodItems.find((item) => item.id === index);
     const existingItem = items.find((item) => item.id === index);
 
@@ -77,6 +89,7 @@ const HealthyWays = () => {
   };
 
   const handleDecrease = (index: number) => {
+    audio.play();
     const existingItem = items.find((item) => item.id === index);
 
     if (existingItem?.count == 1) {

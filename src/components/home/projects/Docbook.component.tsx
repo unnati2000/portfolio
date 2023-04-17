@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AiOutlineCheck } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import { FaCheckCircle } from 'react-icons/fa';
@@ -17,14 +17,21 @@ const weekdays = [
 ];
 
 const Docbook = () => {
+  const [audio, setAudio] = useState<HTMLAudioElement>();
+  const [audio2, setAudio2] = useState<HTMLAudioElement>();
+
   const [selectedTime, setSelectedTime] = useState('4:00 PM');
   const [appointmentDetails, setAppointmentDetails] = useState({
     time: '',
     appointment: false,
   });
-
   const [cardOneStatus, setCardOneStatus] = useState<any>(null);
   const [cardTwoStatus, setCardTwoStatus] = useState<any>(null);
+
+  useEffect(() => {
+    setAudio(new Audio('./click.wav'));
+    setAudio2(new Audio('./game.wav'));
+  }, []);
 
   const date = new Date();
 
@@ -60,7 +67,10 @@ const Docbook = () => {
             {timings.map((time, index) => (
               <div
                 key={index}
-                onClick={() => setSelectedTime(time)}
+                onClick={() => {
+                  audio?.play();
+                  setSelectedTime(time);
+                }}
                 className={
                   selectedTime === time
                     ? 'bg-indigo-400 rounded-md cursor-pointer px-2 py-1'
@@ -110,14 +120,20 @@ const Docbook = () => {
               {' '}
               <button
                 className="bg-green-700 text-green-200 rounded-sm py-1 px-4 flex items-center justify-center gap-1 w-full"
-                onClick={() => setCardOneStatus(true)}
+                onClick={() => {
+                  audio2?.play();
+                  setCardOneStatus(true);
+                }}
               >
                 {' '}
                 <AiOutlineCheck size={18} /> Accept
               </button>
               <button
                 className="bg-rose-700 text-rose-200 rounded-sm py-1 px-4 flex items-center justify-center gap-1 w-full"
-                onClick={() => setCardOneStatus(false)}
+                onClick={() => {
+                  audio2?.play();
+                  setCardOneStatus(false);
+                }}
               >
                 <RxCross1 size={18} />
                 Reject
@@ -183,14 +199,20 @@ const Docbook = () => {
                 {' '}
                 <button
                   className="bg-green-700 text-green-200 rounded-sm py-1 px-4 flex items-center justify-center gap-1 w-full"
-                  onClick={() => setCardTwoStatus(true)}
+                  onClick={() => {
+                    audio2?.play();
+                    setCardTwoStatus(true);
+                  }}
                 >
                   {' '}
                   <AiOutlineCheck size={18} /> Accept
                 </button>
                 <button
                   className="bg-rose-700 text-rose-200 rounded-sm py-1 px-4 flex items-center justify-center gap-1 w-full"
-                  onClick={() => setCardTwoStatus(false)}
+                  onClick={() => {
+                    audio2?.play();
+                    setCardTwoStatus(false);
+                  }}
                 >
                   <RxCross1 size={18} />
                   Reject
